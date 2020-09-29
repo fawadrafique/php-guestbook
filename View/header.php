@@ -11,7 +11,7 @@
 <div class="container">
     <?php if(isset($_POST['submit'])): ?>
     <form action="index.php" method="post">
-    <button action="submit" name="back" class="btn btn-info btn-sm float-right"><i class="fas fas fa-angle-left pr-1"></i>Back</button>
+    <button action="submit" name="back" class="btn btn-info btn-sm mt-1 float-right"><i class="fas fas fa-angle-left pr-1"></i>Back</button>
     </form>
     <?php endif; ?>
     <div class="py-5 text-center">
