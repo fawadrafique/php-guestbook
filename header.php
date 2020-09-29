@@ -11,9 +11,13 @@
 <body class="bg-light d-flex flex-column min-vh-100">
 <div class="container">
     <?php if($_SERVER['PHP_SELF'] == '/book.php'): ?>
-    <form action="index.php" method="post">
-    <button action="submit" name="back" class="btn btn-info btn-sm mt-1 float-right"><i class="fas fas fa-angle-left pr-1"></i>Back</button>
-    </form>
+        <form action="index.php" method="post">
+            <button action="submit" name="back" class="btn btn-info btn-sm mt-1 float-right"><i class="fas fas fa-angle-left pr-1"></i>Back</button>
+        </form>
+    <?php else: ?>
+        <form action="book.php" method="post">
+            <button action="submit" name="book" class="btn btn-info btn-sm mt-1 float-right">Messages<i class="fas fas fa-angle-right pl-1"></i></button>
+        </form>
     <?php endif; ?>
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-3" src="src/icon.png" alt="" width="82" height="82">
