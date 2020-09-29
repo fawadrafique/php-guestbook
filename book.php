@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-include '../Model/post.php';
-include '../Controller/controller.php';
+include 'Model/post.php';
+include 'Controller/controller.php';
 
 ?>
 
