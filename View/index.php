@@ -3,14 +3,13 @@ declare(strict_types=1);
 
 include '../Model/post.php';
 include '../Controller/controller.php';
-
 ?>
 <!doctype html>
 <html lang="en">
 
 <?php include 'header.php'; ?>
 
-    <form action="<?= (!empty(['name']) || !empty(['message'])) ? '':'book.php' ?>" method="post">
+    <form action="<?= (empty($error['name']) && empty($error['message'])) ? 'book.php':'' ?>" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Name (required)">
