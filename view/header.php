@@ -10,17 +10,17 @@
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
 <div class="container">
-    <?php if($_SERVER['PHP_SELF'] == '/php-guestbook/book.php'): ?>
-        <form action="index.php" method="post">
+    <?php if($_SERVER['PHP_SELF'] == '/view/book.php'): ?>
+        <form action="../index.php" method="post">
             <button action="submit" name="back" class="btn btn-info btn-sm mt-1 float-right"><i class="fas fas fa-angle-left pr-1"></i>Back</button>
         </form>
     <?php else: ?>
-        <form action="book.php" method="post">
+        <form action="view/book.php" method="post">
             <button action="submit" name="book" class="btn btn-info btn-sm mt-1 float-right">Messages<i class="fas fas fa-angle-right pl-1"></i></button>
         </form>
     <?php endif; ?>
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-3" src="src/icon.png" alt="" width="82" height="82">
+        <img class="d-block mx-auto mb-3" src="<?= ($_SERVER['PHP_SELF'] == '/view/book.php') ? '../': ''?>src/icon.png" alt="" width="82" height="82">
         <h1>Digital Guestbook</h1>
-        <p class="lead"><?= ($_SERVER['PHP_SELF'] == '/book.php') ? 'What people say about me!':'Write something to your friend!' ?></p>
+        <p class="lead"><?= ($_SERVER['PHP_SELF'] == '/view/book.php') ? 'What people say about me!':'Write something to your friend!' ?></p>
     </div>

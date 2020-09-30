@@ -1,9 +1,3 @@
-<?php
-declare(strict_types=1);
-
-include 'model/post.php';
-include 'controller/controller.php';
-?>
 <!doctype html>
 <html lang="en">
 

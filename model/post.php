@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 class Post {
     private array $message;
+    const MESSAGE_BOOK = 'book.json';
 
     public function getMessage(): array
     {
@@ -16,25 +17,25 @@ class Post {
 
     public function setPost(): void
     {
-        if(!file_exists('book.json'))
+        if(!file_exists(self::MESSAGE_BOOK))
         {
             $json = json_encode(array($this->message),JSON_PRETTY_PRINT);
-            file_put_contents('book.json', $json);
+            file_put_contents(self::MESSAGE_BOOK, $json);
         }
         else
         {
-            $getFile = file_get_contents('book.json');
+            $getFile = file_get_contents(self::MESSAGE_BOOK);
             $tempArray = json_decode($getFile,true);
-            array_push($tempArray, $this->message);
+            $tempArray[] = $this->message;
             $json =json_encode($tempArray,JSON_PRETTY_PRINT);
-            file_put_contents('book.json', $json);
+            file_put_contents(self::MESSAGE_BOOK, $json);
         }
     }
-    public  function getPost()
+    public  function getPost(): array
     {
-        if(file_exists('book.json'))
+        if(file_exists(self::MESSAGE_BOOK))
         {
-            $getFile = file_get_contents('book.json');
+            $getFile = file_get_contents(self::MESSAGE_BOOK);
             return json_decode($getFile,true);
         }
     }
